@@ -14,11 +14,17 @@ const BillingPlans = ({ billing, setBilling, billingType, setBillingType }) => {
             { types.map(type => <Billing key={ type.plan } type={ type } billing={ billing } setBilling={ setBilling } billingType={ billingType } />)}
         </div>
         <div className='flex justify-center items-center gap-4 mt-6 bg-[#f0f6ff] text-lg font-medium py-4'>
-          <p className={`${ billingType === 'monthly' ? 'text[#]' : 'opacity-50'}`}>{ content.second.switch[0] }</p>
+          <p 
+            onClick={() => setBillingType("monthly")}
+            className={`cursor-pointer ${ billingType === 'monthly' ? 'text[#]' : 'opacity-50'}`}
+          >{ content.second.switch[0] }</p>
           <div>
 
           </div>
-          <p className={`${ billingType === 'yearly' ? 'text[#]' : 'opacity-50'}`}>{ content.second.switch[1] }</p>
+          <p 
+            onClick={() => setBillingType("yearly")}
+            className={`cursor-pointer ${ billingType === 'yearly' ? 'text[#]' : 'opacity-50'}`}
+          >{ content.second.switch[1] }</p>
         </div>
     </div>
   )
